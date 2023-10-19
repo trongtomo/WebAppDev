@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+
 import styles from "./LoginForm.module.css";
 
 export default function LoginForm() {
@@ -34,7 +36,7 @@ export default function LoginForm() {
 
         <div className={styles.buttonContainer}>
           {/* <button className={styles.button}>Login</button> */}
-          <Link href="/" className={styles.button}>
+          <Link href="/dashboard/" className={styles.button}>
             Login
           </Link>
         </div>

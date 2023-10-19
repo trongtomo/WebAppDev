@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import Header from '../components/Header';
-import Navigation from '../components/Navigation';
-import Table from '../components/Table';
+import Head from "next/head";
 
+import Navigation from "../../../components/Navigation/navigation";
+import Header from "../../../components/Header/header";
+import Table from "../../../components/Tables/table";
 const Home = () => {
   return (
     <div className="flex">
@@ -10,11 +10,11 @@ const Home = () => {
         <div className="flex items-center mb-4 space-x-1">
           {/* Logo and company name */}
         </div>
-        <Navigation /> {/* Include the Navigation component */}
+        <Navigation />
       </aside>
       <main className="flex-grow p-4">
-        <Header /> {/* Include the Header component */}
-        <Table /> {/* Include the Table component */}
+        <Header />
+        <Table />
       </main>
     </div>
   );
