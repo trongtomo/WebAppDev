@@ -1,0 +1,23 @@
+.tableContainer {
+  width: 100%;
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  border-bottom: 2px solid #000;
+}
+
+.columnHeader {
+  padding: 0.5rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+.tableBody {
+  /* Add your styles for table body */
+}

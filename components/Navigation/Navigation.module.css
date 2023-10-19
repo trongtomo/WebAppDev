@@ -1,0 +1,17 @@
+.navigation {
+    margin-top: 1rem;
+  }
+  
+  .navButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* Add your button styles here */
+  }
+  
+  .navText {
+    font-size: 1rem;
+    font-weight: 500;
+    /* Add your text styles here */
+  }
+  
