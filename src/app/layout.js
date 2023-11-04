@@ -11,8 +11,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <UserProvider
-        loginUrl={`${process.env.NEXT_URL}/api/auth/login`}
-        profileUrl={`${process.env.NEXT_URL}/api/auth/me`}
+        loginUrl= 'https://web-app-dev-trongtomo.vercel.app/api/auth/login'
+        profileUrl='https://web-app-dev-trongtomo.vercel.app/api/auth/me'
       >
         <div className={inter.className}>{children}</div>
       </UserProvider>
