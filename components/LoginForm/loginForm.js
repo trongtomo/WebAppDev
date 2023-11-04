@@ -75,7 +75,7 @@ export default function LoginForm() {
         </div>
       </form>
       <div className={styles.signup}>
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <Link href="/signup" className={styles.signupLink}>
           Sign up
         </Link>
