@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         loginUrl={`${process.env.NEXT_URL}/api/auth/login`}
         profileUrl={`${process.env.NEXT_URL}/api/auth/me`}
       >
-        <body className={inter.className}>{children}</body>
+        <div className={inter.className}>{children}</div>
       </UserProvider>
     </html>
   );
