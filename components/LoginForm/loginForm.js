@@ -1,13 +1,45 @@
 "use client";
 import Link from "next/link";
-
+import { useState } from "react";
 import styles from "./LoginForm.module.css";
 
 export default function LoginForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const loginData = {
+      identifier: email,
+      password: password,
+    };
+    try {
+      const response = await fetch("/api/auth/local", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginData),
+      });
+
+      if (response.ok) {
+        // Handle successful login here, e.g., redirect to the user dashboard
+        console.log("Login successful");
+      } else {
+        console.error("Login failed.");
+        // Handle authentication error here, e.g., show an error message
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      // Handle other errors, e.g., network issues
+    }
+  };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.logo}>Logo</h1>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
           <label htmlFor="phoneNumber" className={styles.label}>
             Phone Number
@@ -36,9 +68,10 @@ export default function LoginForm() {
 
         <div className={styles.buttonContainer}>
           {/* <button className={styles.button}>Login</button> */}
-          <Link href="/dashboard/" className={styles.button}>
+
+          <button type="submit" className={styles.button}>
             Login
-          </Link>
+          </button>
         </div>
       </form>
       <div className={styles.signup}>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LoginForm from "../../../components/Login Form/loginForm"; // Make sure the import path is correct
+import LoginForm from "../../../components/LoginForm/loginForm"; // Make sure the import path is correct
 import styles from "./loginPage.module.css"; // Import styles from loginPage.module.css
 
 const LoginPage = () => {
