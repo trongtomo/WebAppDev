@@ -14,7 +14,7 @@ const AllCard = ({ cards, setCards }) => {
   //   try {
   //     // Send a request to your backend API to update the card status to "Disable"
   //     const response = await fetch(
-  //       `${process.env.SERVER_ENDPOINT}/api/cards/${cardId}`,
+  //       `${"https://smart-parking-server-dev.azurewebsites.net"}/api/cards/${cardId}`,
   //       {
   //         method: "PUT", // or "PATCH" depending on your API
   //         headers: {
@@ -53,7 +53,7 @@ const AllCard = ({ cards, setCards }) => {
     async function fetchData() {
       try {
         const res = await axios.get(
-          `${process.env.SERVER_ENDPOINT}/api/cards?_page=${pageIndex}&_limit=${pageSize}`
+          `https://smart-parking-server-dev.azurewebsites.net/api/cards?_page=${pageIndex}&_limit=${pageSize}`
         );
 
         const {

@@ -25,7 +25,7 @@ const ParkingSessionDetailPage = ({ session }) => {
 };
 export async function getStaticPaths() {
   // Fetch the list of available application IDs from your API or database
-  const endpoint = process.env.GRAPHQL_ENDPOINT;
+  const endpoint =   "https://smart-parking-server-dev.azurewebsites.net/graphql";
   const query = GET_PARKINGSESSIONS;  
   const res = await request(endpoint, query);
   const sessions = res.parkingSessions.data;

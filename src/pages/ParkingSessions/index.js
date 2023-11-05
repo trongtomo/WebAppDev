@@ -5,7 +5,7 @@ import { GET_PARKINGSESSIONS } from "@/queries/parkingSessionsQueries";
 
 const { request } = require("graphql-request");
 export async function getStaticProps() {
-  const endpoint = process.env.GRAPHQL_ENDPOINT;
+  const endpoint =   "https://smart-parking-server-dev.azurewebsites.net/graphql";
   const query = GET_PARKINGSESSIONS;
 
   try {

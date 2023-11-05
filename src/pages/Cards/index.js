@@ -5,7 +5,7 @@ import Head from "next/head";
 import { GET_CARDS } from "@/queries/cardsQueries";
 const { request } = require("graphql-request");
 export async function getStaticProps() {
-  const endpoint = process.env.GRAPHQL_ENDPOINT;
+  const endpoint =   "https://smart-parking-server-dev.azurewebsites.net/graphql";
   const query = GET_CARDS;
 
   try {

@@ -18,7 +18,7 @@ const CardDetailPage = ({ card }) => {
 };
 export async function getStaticPaths() {
   // Fetch the list of available application IDs from your API or database
-  const endpoint = process.env.GRAPHQL_ENDPOINT;
+  const endpoint =   "https://smart-parking-server-dev.azurewebsites.net/graphql";
   const query = GET_CARDS;
   const res = await request(endpoint, query);
   const cards = res.cards.data;

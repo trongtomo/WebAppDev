@@ -16,7 +16,7 @@ const ApplicationsPage = ({ applications }) => {
   );
 };
 export async function getStaticProps() {
-  const endpoint = process.env.GRAPHQL_ENDPOINT;
+  const endpoint =   "https://smart-parking-server-dev.azurewebsites.net/graphql";
   const query = GET_APPLICATIONS;
   try {
     const res = await request(endpoint, query);

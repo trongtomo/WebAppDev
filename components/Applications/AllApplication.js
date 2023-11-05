@@ -14,7 +14,7 @@ const AllApplication = ({ applications, setApplications }) => {
   //   try {
   //     // Send a request to your backend API to update the application status to "Disable"
   //     const response = await fetch(
-  //       `${process.env.SERVER_ENDPOINT}/api/applications/${applicationId}`,
+  //       `${"https://smart-parking-server-dev.azurewebsites.net"}/api/applications/${applicationId}`,
   //       {
   //         method: "PUT", // or "PATCH" depending on your API
   //         headers: {
@@ -53,7 +53,7 @@ const AllApplication = ({ applications, setApplications }) => {
     async function fetchData() {
       try {
         const res = await axios.get(
-          `${process.env.SERVER_ENDPOINT}/api/applications?_page=${pageIndex}&_limit=${pageSize}`
+          `https://smart-parking-server-dev.azurewebsites.net/api/applications?_page=${pageIndex}&_limit=${pageSize}`
         );
         const {
           meta: { pagination },

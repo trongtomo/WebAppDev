@@ -14,7 +14,7 @@ const AllParkingSession = ({ sessions, setSessions }) => {
     async function fetchData() {
       try {
         const res = await axios.get(
-          `${process.env.SERVER_ENDPOINT}/api/parking-sessions?_page=${pageIndex}&_limit=${pageSize}`
+          `https://smart-parking-server-dev.azurewebsites.net/api/parking-sessions?_page=${pageIndex}&_limit=${pageSize}`
         );
         const {
           meta: { pagination },
