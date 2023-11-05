@@ -10,7 +10,7 @@ export async function getStaticProps() {
 
   try {
     const res = await request(endpoint, query);
-    const sessions = res.parkingSessions.data;
+    const sessions = res?.parkingSessions?.data;
     return {
       props: {
         sessions,

@@ -10,7 +10,7 @@ export async function getStaticProps() {
 
   try {
     const res = await request(endpoint, query);
-    const cards = res.cards.data;
+    const cards = res?.cards?.data;
     return {
       props: {
         cards,

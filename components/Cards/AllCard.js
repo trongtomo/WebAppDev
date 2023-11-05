@@ -10,44 +10,44 @@ const AllCard = ({ cards, setCards }) => {
   const [loading, setLoading] = useState(true); // State for loading status
   const [error, setError] = useState(null); // State for error
 
-  const handleDisable = async (cardId) => {
-    try {
-      // Send a request to your backend API to update the card status to "Disable"
-      const response = await fetch(
-        `${process.env.SERVER_ENDPOINT}/api/cards/${cardId}`,
-        {
-          method: "PUT", // or "PATCH" depending on your API
-          headers: {
-            "Content-Type": "card/json",
-          },
-          body: JSON.stringify({
-            data: {
-              attributes: {
-                Status: "Disable", // Set the new status here
-              },
-            },
-          }),
-        }
-      );
-      // Update the card's status in the frontend
-      setCards((prevApplications) => {
-        return prevApplications.map((app) => {
-          if (app.id === cardId) {
-            return {
-              ...app,
-              attributes: {
-                ...app.attributes,
-                Status: "Disable",
-              },
-            };
-          }
-          return app;
-        });
-      });
-    } catch (error) {
-      console.error("Error disabling card:", error);
-    }
-  };
+  // const handleDisable = async (cardId) => {
+  //   try {
+  //     // Send a request to your backend API to update the card status to "Disable"
+  //     const response = await fetch(
+  //       `${process.env.SERVER_ENDPOINT}/api/cards/${cardId}`,
+  //       {
+  //         method: "PUT", // or "PATCH" depending on your API
+  //         headers: {
+  //           "Content-Type": "card/json",
+  //         },
+  //         body: JSON.stringify({
+  //           data: {
+  //             attributes: {
+  //               Status: "Disable", // Set the new status here
+  //             },
+  //           },
+  //         }),
+  //       }
+  //     );
+  //     // Update the card's status in the frontend
+  //     setCards((prevApplications) => {
+  //       return prevApplications.map((app) => {
+  //         if (app.id === cardId) {
+  //           return {
+  //             ...app,
+  //             attributes: {
+  //               ...app.attributes,
+  //               Status: "Disable",
+  //             },
+  //           };
+  //         }
+  //         return app;
+  //       });
+  //     });
+  //   } catch (error) {
+  //     console.error("Error disabling card:", error);
+  //   }
+  // };
 
   useEffect(() => {
     async function fetchData() {
@@ -103,9 +103,10 @@ const AllCard = ({ cards, setCards }) => {
                   <Link href={`/Cards/${card.id}`}>View Details</Link>
                 </td>
                 <td>
-                  <button onClick={() => handleDisable(card.id)}>
+                  {/* <button onClick={() => handleDisable(card.id)}>
                     Disable
-                  </button>
+                  </button> */}
+                  <button>Disable</button>
                 </td>
               </tr>
             ))}

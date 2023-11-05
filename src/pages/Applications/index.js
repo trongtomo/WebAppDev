@@ -4,6 +4,7 @@ import Head from "next/head";
 import { GET_APPLICATIONS } from "@/queries/applicationsQueries";
 const { request } = require("graphql-request");
 const ApplicationsPage = ({ applications }) => {
+  
   return (
     <div>
       <Head>
@@ -19,7 +20,7 @@ export async function getStaticProps() {
   const query = GET_APPLICATIONS;
   try {
     const res = await request(endpoint, query);
-    const applications = res.applications.data;
+    const applications = res?.applications?.data;
     return {
       props: {
         applications,

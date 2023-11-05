@@ -10,44 +10,44 @@ const AllApplication = ({ applications, setApplications }) => {
   const [loading, setLoading] = useState(true); // State for loading status
   const [error, setError] = useState(null); // State for error
 
-  const handleDelete = async (applicationId) => {
-    try {
-      // Send a request to your backend API to update the application status to "Disable"
-      const response = await fetch(
-        `${process.env.SERVER_ENDPOINT}/api/applications/${applicationId}`,
-        {
-          method: "PUT", // or "PATCH" depending on your API
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            data: {
-              attributes: {
-                Status: "Disable", // Set the new status here
-              },
-            },
-          }),
-        }
-      );
-      // Update the application's status in the frontend
-      setApplications((prevApplications) => {
-        return prevApplications.map((app) => {
-          if (app.id === applicationId) {
-            return {
-              ...app,
-              attributes: {
-                ...app.attributes,
-                Status: "Disable",
-              },
-            };
-          }
-          return app;
-        });
-      });
-    } catch (error) {
-      console.error("Error disabling application:", error);
-    }
-  };
+  // const handleDelete = async (applicationId) => {
+  //   try {
+  //     // Send a request to your backend API to update the application status to "Disable"
+  //     const response = await fetch(
+  //       `${process.env.SERVER_ENDPOINT}/api/applications/${applicationId}`,
+  //       {
+  //         method: "PUT", // or "PATCH" depending on your API
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify({
+  //           data: {
+  //             attributes: {
+  //               Status: "Disable", // Set the new status here
+  //             },
+  //           },
+  //         }),
+  //       }
+  //     );
+  //     // Update the application's status in the frontend
+  //     setApplications((prevApplications) => {
+  //       return prevApplications.map((app) => {
+  //         if (app.id === applicationId) {
+  //           return {
+  //             ...app,
+  //             attributes: {
+  //               ...app.attributes,
+  //               Status: "Disable",
+  //             },
+  //           };
+  //         }
+  //         return app;
+  //       });
+  //     });
+  //   } catch (error) {
+  //     console.error("Error disabling application:", error);
+  //   }
+  // };
 
   useEffect(() => {
     async function fetchData() {
@@ -122,9 +122,10 @@ const AllApplication = ({ applications, setApplications }) => {
                   <Link href={`/Applications/${application.id}`}>Edit</Link>
                 </td>
                 <td>
-                  <button onClick={() => handleDelete(application.id)}>
+                  {/* <button onClick={() => handleDelete(application.id)}>
                     Delete
-                  </button>
+                  </button> */}
+                  <button>Disable</button>
                 </td>
               </tr>
             ))}
