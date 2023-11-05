@@ -11,10 +11,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <UserProvider
-        // loginUrl= 'https://web-app-dev-trongtomo.vercel.app/api/auth/login'
-        // profileUrl='https://web-app-dev-trongtomo.vercel.app/api/auth/me'
-        loginUrl="http://localhost:3000//api/auth/login"
-        profileUrl="http://localhost:3000//api/auth/me"
+        loginUrl= 'https://web-app-dev-trongtomo.vercel.app/api/auth/login'
+        profileUrl='https://web-app-dev-trongtomo.vercel.app/api/auth/me'
+        // loginUrl="http://localhost:3000//api/auth/login"
+        // profileUrl="http://localhost:3000//api/auth/me"
       >
         <body className={inter.className}>{children}</body>
       </UserProvider>
